@@ -1,5 +1,5 @@
-import { createApp } from 'vue'
-import './style.css'
+import { defineCustomElement } from 'vue'
 import App from './App.vue'
+import AppStyle from './assets/styles/index.css'
 
-createApp(App).mount('#app')
+export const WebComponent = customElements.define("component-name", defineCustomElement({...App, styles: [AppStyle]}))
