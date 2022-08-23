@@ -1,7 +1,25 @@
-# Vue 3 + Vite
+## Run
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
-## Recommended IDE Setup
+```bash
+npm i
+vite
+```
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+## Vite config
+Om vue niet in een gebuild component te hebben kun je
+```
+    rollupOptions: {
+      external: ['vue']
+    }
+```
+in vite.config.js weghalen. \
+De code om vue globaal te runnen staat al op djurve.
+
+## Custom element
+* In main.js is geef je een naam aan een custom element waar nu "component-name" staat.
+* CSS in een custom element werkt als je de component de extension .ce.vue geeft.
+* Stylesheets kun je zo aan een element toevoegen:
+```javascript
+export const WebComponent = customElements.define("component-name", defineCustomElement({...App, styles: [importedStylesheet]}))
+```
