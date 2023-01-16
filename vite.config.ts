@@ -7,17 +7,14 @@ export default defineConfig({
     emitCss: false
   })],
   build: {
-    lib: {
-      entry: ['./src/main.ts', './src/main2.ts'],
-      formats: ['es']
-    },
-    // rollupOptions: {
-    //   input: './src/main.ts',
-    //   output: {
-    //     format: 'iife',
-    //     name: 'app',
-    //     dir: 'dist',
-    //   }
-    // }
+    rollupOptions: {
+      input: './src/main.ts',
+      output: {
+        format: 'iife',
+        name: 'app',
+        dir: './dist',
+        entryFileNames: "[name].js"
+      }
+    }
   }
 })
